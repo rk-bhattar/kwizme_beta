@@ -1,0 +1,27 @@
+.footer-bx .social-links {
+  text-align: center;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.footer-bx .social-links li {
+  margin-left: 15px;
+  display: inline-block;
+}
+.footer-bx .social-links .social {
+  width: 35px;
+  height: 35px;
+  display: block;
+  color: #ffe800;
+  font-size: 35px;
+}
+a {
+  text-decoration: none !important;
+}
+.footer-bx {
+  height: 10vh;
+}
+ul {
+  padding-left: 0rem !important;
+}

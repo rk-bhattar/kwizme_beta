@@ -1,0 +1,71 @@
+<div class="container"
+     style="min-height: 70vh;">
+  <form [formGroup]="registrationForm">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="text"
+                 class="primary-form-input w-100"
+                 formControlName="name"
+                 placeholder="Enter your name" />
+        </div>
+      </div>
+      <div class="col-md-8"></div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <label>Please enter your topic of choice and query below to generate quiz</label><br>
+          <!--  <input type="text"
+                 class="primary-form-input w-100 p-3"
+                 formControlName="topic"
+                 placeholder="Topic" /> -->
+          <textarea formControlName="topic"
+                    placeholder="Topic"
+                    class="primary-form-input w-100"
+                    rows="2"></textarea>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-8">
+        <div class="form-group text-end">
+          <button type="button"
+                  [disabled]="registrationForm.invalid"
+                  class="btn primary-btn"
+                  (click)="open(content)">Generate quiz</button>
+        </div>
+
+
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<ng-template #content
+             let-modal>
+  <div class="modal-header border-0">
+    <div class="modal-title"
+         id="modal-basic-title">Confirm?</div>
+    <!--  <button type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"></button> -->
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      We will store the information of this session including your Name , Query ,Quiz ,questions and answers for
+      research to improve our site better . This will never be shared with anyone else.
+    </div>
+  </div>
+  <div class="modal-footer border-0">
+    <button type="button"
+            class="btn modal-btn"
+            (click)="modal.close('Save click')">
+      Agree
+    </button>
+    <button type="button"
+            class="btn modal-btn"
+            (click)="modal.dismiss('Cross click')">
+      Disagree
+    </button>
+  </div>
+</ng-template>

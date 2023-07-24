@@ -1,0 +1,47 @@
+<div class="container"
+     style="min-height: 70vh;">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Congratulations on completing the test. Here are your results.</p>
+            <p class="my-4"><span class="label-text">Correct Answers :</span> <span
+                      class="label-value ms-3">{{quizService.result}}</span> </p>
+            <p><span class="label-text">Wrong Answers :</span> <span
+                      class="label-value ms-3">{{10-quizService.result}}</span></p>
+        </div>
+        <div class="col-md-6 my-4">
+            <div class="d-flex justify-content-between">
+                <button class="btn primary-btn"
+                        routerLink="/quiz">Retake Quiz</button>
+                <button class="btn primary-btn"
+                        routerLink="/">Take New Quiz</button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+
+        <div class="col-md-6 mt-2">
+            <form [formGroup]="feedbackForm">
+                <textarea formControlName="feedback"
+                          placeholder="Feedback -let us know how we can improve"
+                          class="primary-form-input w-100"
+                          rows="8"></textarea><br>
+                <button class="btn primary-btn mt-3"
+                        [disabled]="feedbackForm.invalid"
+                        (click)="submitFeedBack()">Submit Feedback</button>
+            </form>
+        </div>
+
+
+        <div class="col-md-6 mt-2 ">
+            <form [formGroup]="imrovementForm"> <textarea formControlName="improvementSuggestion"
+                          placeholder="Improvement -Suggest what we can do better"
+                          class="primary-form-input w-100"
+                          rows="8"></textarea><br>
+                <button class="btn primary-btn mt-3"
+                        [disabled]="imrovementForm.invalid"
+                        (click)="submitImprovementSuggestion()">Suggest Improvement</button>
+            </form>
+        </div>
+
+    </div>
+</div>
